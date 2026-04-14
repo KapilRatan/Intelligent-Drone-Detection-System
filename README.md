@@ -25,14 +25,28 @@ AUC: 0.9970
 Precision: 98.28% 
 Recall: 97.78% 
 
-
-
-
+## 📁 Folder Structure
 ├── assets/             # Images, logos, and static files
+
 ├── components/         # Reusable UI components (Navbar, Sidebar)
+
 ├── config/             # Configuration settings (PAGE_CONFIG)
+
 ├── pages/              # Streamlit page modules (Radar, Dashboard)
+
 ├── utils/              # Helper functions and style loaders
+
 ├── app.py              # Main entry point for the Streamlit application
+
 ├── requirements.txt    # Project dependencies
+
 └── drone_vs_bird_final.h5 # Pre-trained CNN model
+
+## 🚀 Getting Started
+#### 1. Installation
+Clone the repository and install the required dependencies:
+pip install -r requirements.txt
+
+#### 2. Run the Application
+Start the Streamlit server:
+streamlit run app.py
