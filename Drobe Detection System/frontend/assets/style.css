@@ -1,0 +1,148 @@
+/* assets/style.css */
+/* ── Google Fonts ─────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Exo+2:wght@300;400;500;600&display=swap');
+
+/* ── CSS Variables ───────────────────────────────────────────── */
+:root {
+    --bg:           #050d15;
+    --bg2:          #081422;
+    --bg3:          #0d1f33;
+    --green:        #00ff9d;
+    --green-dim:    #00cc7d;
+    --green-glow:   rgba(0, 255, 157, 0.15);
+    --amber:        #ffb800;
+    --cyan:         #00d4ff;
+    --red:          #ff4444;
+    --text:         #c8f0e8;
+    --text-dim:     #5a8a7a;
+    --border:       rgba(0, 255, 157, 0.15);
+    --border-hi:    rgba(0, 255, 157, 0.40);
+    --font-mono:    'Share Tech Mono', monospace;
+    --font-ui:      'Exo 2', sans-serif;
+}
+
+/* ── Global reset ────────────────────────────────────────────── */
+html, body, [class*="css"] {
+    font-family: var(--font-ui) !important;
+    background-color: var(--bg) !important;
+    color: var(--text);
+}
+
+/* ── Hide Streamlit chrome ───────────────────────────────────── */
+#MainMenu, footer, header { visibility: hidden; }
+.block-container { padding-top: 1rem !important; padding-bottom: 2rem !important; }
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: rgba(0,255,157,0.25); border-radius: 3px; }
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+div.stButton > button {
+    background: var(--green-glow) !important;
+    border: 1px solid var(--border-hi) !important;
+    color: var(--green) !important;
+    font-family: var(--font-mono) !important;
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    width: 100% !important;
+    transition: all 0.2s !important;
+}
+div.stButton > button:hover {
+    background: rgba(0,255,157,0.22) !important;
+    box-shadow: 0 0 16px rgba(0,255,157,0.2) !important;
+}
+div.stButton > button[kind="secondary"] {
+    background: transparent !important;
+    border-color: rgba(255,68,68,0.35) !important;
+    color: var(--red) !important;
+}
+
+/* ── File uploader ───────────────────────────────────────────── */
+[data-testid="stFileUploader"] {
+    background: rgba(0,255,157,0.02) !important;
+    border: 1px dashed var(--border-hi) !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+}
+[data-testid="stFileUploader"]:hover {
+    background: rgba(0,255,157,0.06) !important;
+}
+[data-testid="stFileUploader"] label {
+    color: var(--text-dim) !important;
+    font-family: var(--font-mono) !important;
+    font-size: 11px !important;
+    letter-spacing: 1px !important;
+}
+/* Hide default “NPY, PNG…” caption; label reads “Signal file”; types unchanged in code */
+[data-testid="stFileUploader"] small {
+    display: none !important;
+}
+
+/* ── Progress bar ────────────────────────────────────────────── */
+[data-testid="stProgress"] > div > div {
+    background: var(--green) !important;
+}
+
+/* ── Horizontal radio (page nav) ─────────────────────────────── */
+[data-testid="stRadio"] > div {
+    flex-direction: row !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+}
+[data-testid="stRadio"] label {
+    font-family: var(--font-mono) !important;
+    font-size: 11px !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: var(--text-dim) !important;
+    background: var(--bg2) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    padding: 8px 16px !important;
+}
+[data-testid="stRadio"] label:has(input:checked) {
+    background: var(--green-glow) !important;
+    color: var(--green) !important;
+    border-color: var(--border-hi) !important;
+}
+
+/* ── Tabs (legacy) ───────────────────────────────────────────── */
+[data-testid="stTabs"] [role="tablist"] {
+    background: var(--bg2) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    padding: 4px !important;
+    gap: 4px !important;
+}
+[data-testid="stTabs"] button[role="tab"] {
+    font-family: var(--font-mono) !important;
+    font-size: 11px !important;
+    letter-spacing: 1.5px !important;
+    color: var(--text-dim) !important;
+    border-radius: 5px !important;
+    background: transparent !important;
+    text-transform: uppercase !important;
+}
+[data-testid="stTabs"] button[role="tab"][aria-selected="true"] {
+    background: var(--green-glow) !important;
+    color: var(--green) !important;
+    text-shadow: 0 0 10px var(--green);
+}
+
+/* ── Spinner ─────────────────────────────────────────────────── */
+[data-testid="stSpinner"] {
+    color: var(--green) !important;
+    font-family: var(--font-mono) !important;
+}
+
+/* ── Alerts / info boxes ─────────────────────────────────────── */
+[data-testid="stAlert"] {
+    background: var(--bg2) !important;
+    border-color: var(--border-hi) !important;
+    color: var(--text) !important;
+    border-radius: 8px !important;
+}
